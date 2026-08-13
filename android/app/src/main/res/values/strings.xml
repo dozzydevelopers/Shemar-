@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Shemar Chat</string>
+    <string name="server_url">https://ais-dev-rodcxfhmw7gyvqdgz6bczd-608787230991.europe-west2.run.app</string>
+    <string name="provider_authority">com.shemarchat.app.fileprovider</string>
+</resources>

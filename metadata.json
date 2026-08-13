@@ -1,0 +1,6 @@
+{
+  "name": "Shemar Chat",
+  "description": "Private Celebrity Chat Platform — WhatsApp-style messaging web app with multi-tenant celebrity isolation, super admin dashboard, fan accounts, and real-time messaging.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

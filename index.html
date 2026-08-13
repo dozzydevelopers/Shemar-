@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Shemar Chat — VIP Private Chat Network</title>
+    <meta name="description" content="Shemar Chat VIP Network — Modern mobile-first private celebrity & fan messaging platform." />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- iOS Safari Native PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Shemar Chat" />
+    
+    <!-- Official App Icon Variants -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512x512.png" />
+
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:title" content="Shemar Chat" />
+    <meta property="og:description" content="VIP Private Celebrity & Fan Messaging Network" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/shemar-logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shemar Chat" />
+    <meta name="twitter:image" content="/shemar-logo.png" />
+
+    <!-- Resource Preloading for Critical Assets -->
+    <link rel="preload" as="image" href="/shemar-logo.png" />
+
+    <!-- Safe Area CSS Variables & Instant Startup Shell Styles -->
+    <style>
+      :root {
+        --sat: env(safe-area-inset-top, 0px);
+        --sab: env(safe-area-inset-bottom, 0px);
+        --sal: env(safe-area-inset-left, 0px);
+        --sar: env(safe-area-inset-right, 0px);
+      }
+      body {
+        background-color: #020617;
+        color: #f8fafc;
+        margin: 0;
+        padding-top: var(--sat);
+        padding-bottom: var(--sab);
+        padding-left: var(--sal);
+        padding-right: var(--sar);
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        overflow-x: hidden;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Instant Splash Loading Screen */
+      #initial-splash {
+        position: fixed;
+        inset: 0;
+        background-color: #020617;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        color: #f8fafc;
+        font-family: inherit;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      .splash-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+      }
+      .splash-logo-wrap {
+        width: 100px;
+        height: 100px;
+        border-radius: 1.5rem;
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(2, 6, 23, 0.8));
+        border: 1px solid rgba(16, 185, 129, 0.4);
+        padding: 0.5rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        animation: pulseLogo 2s infinite ease-in-out;
+      }
+      .splash-logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1.1rem;
+      }
+      .splash-title {
+        font-size: 1.5rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        color: #ffffff;
+        margin: 0;
+        text-transform: uppercase;
+      }
+      .splash-subtitle {
+        font-size: 0.8rem;
+        color: #94a3b8;
+        margin: 0;
+        font-weight: 500;
+      }
+      .splash-dots {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+      .splash-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #10b981;
+        animation: dotBounce 1.4s infinite ease-in-out both;
+      }
+      .splash-dot:nth-child(1) { animation-delay: -0.32s; }
+      .splash-dot:nth-child(2) { animation-delay: -0.16s; }
+
+      @keyframes pulseLogo {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.03); opacity: 0.9; }
+      }
+      @keyframes dotBounce {
+        0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+        40% { transform: scale(1); opacity: 1; }
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-300">
+    <div id="root">
+      <!-- Instant Branded Initial Splash Screen (Replaced upon React mount) -->
+      <div id="initial-splash">
+        <div class="splash-card">
+          <div class="splash-logo-wrap">
+            <img src="/shemar-logo.png" alt="Shemar Chat" class="splash-logo-img" />
+          </div>
+          <div>
+            <h1 class="splash-title">SHEMAR CHAT</h1>
+            <p class="splash-subtitle" id="splash-status-text">Loading securely...</p>
+          </div>
+          <div class="splash-dots">
+            <span class="splash-dot"></span>
+            <span class="splash-dot"></span>
+            <span class="splash-dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Production Intelligent Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator && window.self === window.top) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then((reg) => {
+              console.log('[Shemar PWA] Service Worker registered:', reg.scope);
+            })
+            .catch((err) => {
+              console.error('[Shemar PWA] Service Worker registration failed:', err);
+            });
+        });
+      } else if ('serviceWorker' in navigator) {
+        // Clean up and unregister any existing service workers within the iframe to prevent request interception issues
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (const registration of registrations) {
+            registration.unregister().then((success) => {
+              if (success) console.log('[Shemar PWA] Unregistered service worker within iframe context.');
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
